@@ -2,14 +2,22 @@
 2D Financial Game Sim with Gemini 3 API
 
 #prerequisites
+
 -familiarity with Python
+
 -familiarity with installing python packages and modules
+
 -Python 3.5 or above
 
+
 #packages necessary (imports)
+
 matplotlib
+
 pandas
+
 pygame
+
 
 #pygame
 -familiarity with pygame is encouraged to understand the code
