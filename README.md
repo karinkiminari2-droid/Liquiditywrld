@@ -22,8 +22,14 @@ Isolate all files in their own directory once files are downloaded and extracted
 Files are also used for manual editing to customize the financial information to your financial situation.
 
 Press s to print out time and date (recieve pack at times)
+
 Press f for a financial graph
+
 Press c to refill your cards
+
 Press d to duel John
+
 Click to talk to npcs
+
 Click a door to activate that house
+
