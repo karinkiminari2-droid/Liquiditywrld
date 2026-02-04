@@ -27,7 +27,19 @@ The game can be played with/without Gemini
 
 Isolate all files in their own directory once files are downloaded and extracted. The game pulls from other files constantly, so keep everything provided here in one place for a simple script run command.
 
-Files are also used for manual editing to customize the financial information to your financial situation.
+Files are also used for manual editing to customize the financial information to your financial situation. For this, understanding of the game's code is strongly encouraged and developers who would like to contribute are welcomed. 
+
+Requisite Knowledge for Modding
+-Update csv in python, text editor
+-Csv formatting
+-matplotlib
+-pandas
+-Python: Dictionaries,Lists,conditionals,loops
+
+Target Demographic
+-Coders attempting to understand and read code
+-Beginner to Intermediate skills in Python
+-Introduction to pygame features/pygame tech demo
 
 Press s to print out time and date (recieve pack at times)
 
