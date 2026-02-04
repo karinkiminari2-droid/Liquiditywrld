@@ -1,0 +1,4 @@
+1: Brief Write Up - 200 words which Gemini Features used and how they are central to the application
+2: Project link
+3: 3-minute demonstration video
+

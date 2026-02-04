@@ -1,0 +1,16 @@
+2d world
+savings = bad = post-apocalyptic map
+savings = good = normal map
+savings = great = happy map
+main char
+map background changes colors
+actions based on map pos as (remember map moves player (map moves giving player movement look))
+importing csv files for data
+key pressed at map pos outputs data as pyqt window
+gemini handles print responses
+
+let's start here and see how far we get after 2 days
+one house is a live stock market tracker for noted stocks
+one house for personal investments
+one house for buying/selling assets, irl integration
+fill out the csv

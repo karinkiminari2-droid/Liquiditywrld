@@ -1,0 +1,11 @@
+Gemini was helpful in asset generation for this game, as well as creating constructive concepts.
+Assets generated:
+-Map
+-Card Names (about 65%)
+-Developing mechanics (help with code as partner/teacher)
+-matplotlib plot
+
+Negatives
+-struggles with repeated questions with random answers ex. Name a random food
+-crashes loading info such as live stock information, even outdated stock information
+-loading time (should be faster than basic web scraper? I'm non-technical so @ me on this)
