@@ -41,6 +41,21 @@ Target Demographic
 -Beginner to Intermediate skills in Python
 -Introduction to pygame features/pygame tech demo
 
+#Running the file
+run the python script from the taurusgem directory
+Linux: cd taurusgem
+python3 taurusgem.py
+
+#with Gemini
+run the pythonscript from the taurusgem directory
+make sure you have followed Gemini 3 API installation commands for python in a virtual environment
+This requires knowledge of the Gemini 3 API and acquisition of Gemini 3 API Key can be found here:
+https://ai.google.dev/gemini-api/docs
+https://ai.google.dev/gemini-api/docs/quickstart
+
+Linux: cd taurusgem
+python3 taurusgemai.py
+
 Press s to print out time and date (recieve pack at times)
 
 Press f for a financial graph
