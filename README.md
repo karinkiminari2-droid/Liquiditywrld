@@ -1,4 +1,4 @@
-# Liquidity World v.0.1
+# Liquidity World v.0.0.1
 2D Financial Game Sim with Gemini 3 API
 
 #prerequisites
