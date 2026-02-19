@@ -1,4 +1,4 @@
-# Liquidity World v.0.0.1
+# Liquidity World v.0.0.2
 2D Financial Game Sim with Gemini 3 API
 
 #prerequisites
@@ -43,8 +43,9 @@ Target Demographic
 
 #Running the file
 run the python script from the taurusgem directory
-Linux: cd taurusgem
-python3 taurusgem.py
+Linux: 
+$ cd taurusgem
+$ python3 taurusgem.py
 
 #with Gemini
 run the pythonscript from the taurusgem directory
@@ -53,16 +54,10 @@ This requires knowledge of the Gemini 3 API and acquisition of Gemini 3 API Key 
 https://ai.google.dev/gemini-api/docs
 https://ai.google.dev/gemini-api/docs/quickstart
 
-Linux: cd taurusgem
-python3 taurusgemai.py
+Linux: 
+$ cd taurusgem
+$ python3 taurusgemai.py
 
-Press s to print out time and date (recieve pack at times)
-
-Press f for a financial graph
-
-Press c to refill your cards
-
-Press d to duel John
 
 Click to talk to npcs
 
