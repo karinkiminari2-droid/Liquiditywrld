@@ -6,6 +6,8 @@ import random
 import csv
 #mine
 from tabul import dataview
+from cashview import transact, tview, tview2
+from cudraw import cud
 #pandas
 import pandas as pd
 #matplotlib
@@ -69,9 +71,16 @@ def fhouse():
 		csvr3 = csv.DictReader(file)
 		for row in csvr3:
 			data.append(row)
+	with open('fproject.csv', 'r') as file:
+		csvr4 = csv.DictReader(file)
+		for row in csvr4:
+			data.append(row)
 	print(dataview(data[0]))
 	print(dataview(data[1]))
-	print(dataview(data[2])) 
+	print(dataview(data[2]))
+	print("\n Projections: \n")
+	print(dataview(data[3]))
+	tview() 
 def cardshop():
 	bitl = []
 	cardadd = []
@@ -113,7 +122,7 @@ def npclines():
 	with open('npclines.txt', 'r') as file:
 		for line in file:
 			npcl.append(line)
-	x = random.randint(0,len(npcl))
+	x = random.randint(0,len(npcl)-1)
 	print("____________")
 	print(npcl[x] +"\n")
 	print("-------------")
@@ -173,22 +182,95 @@ def fwindow(kl, vl):
 	btn = tk.Button(root, text = "Close", command = root.destroy)
 	btn.pack()
 	root.mainloop()
+def qvshow():
+	quiz1 = []
+	pts = 0
+	with open('v.csv', 'r') as file:
+		csvr = csv.DictReader(file)
+		for row in csvr:
+			quiz1.append(row)
+	a1 = input(f"{quiz1[0]['Question']} (y/n)")
+	if a1 == 'y':
+		pts += 1
+	a2 = int(input(f"{quiz1[1]['Question']} \n: "))
+	pts += a2
+	a3 = int(input(f"{quiz1[2]['Question']} \n: "))
+	pts += a3
+	if a2 >= 5 or a3 <= 10:
+		print("Keep up the good work! \n")
+		pack()
+	else:
+		print("Try harder next time to stick to your goals")
+	with open('vview.csv', 'a') as vv:
+		vv.write(f"{datetime.datetime.now()},{pts}\n")
+def vhouse():
+	view1l = []
+	with open('vview.csv', 'r') as file:
+		csvr = csv.DictReader(file)
+		for row in csvr:
+			view1l.append(row)
+	for i in range(0,len(view1l)): 	
+		print(dataview(view1l[i]))
+		
 def pack():
 	print("You got a new pack!")
 	packl = []
 	cardlpc = []
-	z = random.randint(0,len(packl))
 	with open('pack.txt', 'r') as file:
 		for line in file:
 			packl.append(line.strip('\n'))
+		z = random.randint(0,len(packl))
 	with open('cardlistpc.txt', 'r') as file:
 		for line in file:
 			cardlpc.append(line)
-			print(f"New card added: {packl[z]}")
-			cardlpc.append(packl[z]+'\n')
+		print(f"New card added: {packl[z]}")
+		cardlpc.append(packl[z]+'\n')
 	with open('cardlistpc.txt', 'w') as file:
 		for x in cardlpc:
 			file.write(f"{x}")
+def phouseview():
+	print("Systems for progression based on input")
+	proglog = []
+	with open('plist.csv','r') as file:
+		csvr = csv.DictReader(file)
+		for line in csvr:
+			proglog.append(line)
+	print("-------Tasks------(1 = complete)")
+	for dictio in proglog:
+		print(f"{dictio['Task']} {dictio[' Completion Status']}")
+def phouse():
+	print("Systems for progression based on input")
+	proglog = []
+	proglist = []
+	with open('plist.csv','r') as file:
+		csvr = csv.DictReader(file)
+		for line in csvr:
+			proglog.append(line)
+		for i in proglog:
+			print(f'{i} {proglog.index(i)}')
+		edit = int(input("Which task was completed? \nEnter the number next to the line of the task\n :"))
+		proglog[edit][' Completion Status'] = 1
+		df = pd.DataFrame(proglog)
+		df.to_csv("plist.csv", index=False) #pandas takes dictionaries and converts it back to csv
+			
+		pack()
+def dungeon():
+	nothing = "The dungeon was normal today"
+	taunt = "Press d right now you won't"
+	dx = random.randint(0,4)
+	if dx == 3:
+		pack()
+	elif dx == 2:
+		print(taunt)
+	else:
+		print(nothing)
+def stockh():
+	print("Can you solve the mystery in the code?")
+	print("What is special about the twin Dragons?")
+	print("Submit your answer...on the Github")
+	with open('sh.csv','r') as file:
+		for line in file:
+			print(line)
 #matplotlib functions
 def fplot(listx, listy):
 	plt.figure(figsize=(8,5))
@@ -224,6 +306,9 @@ with open('finances3.csv', 'r') as file:
 bitrender = font.render(bitslm[0], True, 'white')
 h1name = font.render('Finance House', True, 'white')
 h2name = font.render('Card Shop', True, 'white')
+h3name = font.render('Vest House', True, 'white')
+h4name = font.render('Progression House', True, 'white')
+h5name = font.render('Dungeon', True, 'white')
 h6name = font.render('Stock Market House', True, 'white')
 
 run = True
@@ -244,12 +329,15 @@ while run:
 	h2 = pygame.Rect(369,233,50,50)
 	#pygame.draw.rect(screen, blk, (369,233,50,50))#h2
 	
+	screen.blit(h3name, (439,53))
 	h3 = pygame.Rect(475,141,50,50)
 	#pygame.draw.rect(screen, blk, (475,141,50,50))#h3
 	
+	screen.blit(h4name, (584,142))
 	h4 = pygame.Rect(601,214,50,50)
 	#pygame.draw.rect(screen, blk, (601,214,50,50))#h4
 	
+	screen.blit(h5name, (733,199))
 	h5 = pygame.Rect(731,294,50,50)
 	#pygame.draw.rect(screen, blk, (731,294,50,50))#h5
 	
@@ -274,6 +362,8 @@ while run:
 				with open('cardlistpc.txt','r') as file:
 					for line in file:
 						print(line)
+			if event.key == pygame.K_LSHIFT:
+				transact()
 			if event.key == pygame.K_s:
 				dt = str(datetime.datetime.now())
 				with open('savedate.txt', 'w') as f:
@@ -298,6 +388,12 @@ while run:
 				cardrefill()
 			if event.key == pygame.K_f:
 				fplot(kl, vlint)
+			if event.key == pygame.K_v:
+				tview2()
+			if event.key == pygame.K_q:
+				qvshow()
+			if event.key == pygame.K_t:
+				phouse()
 		if event.type == pygame.MOUSEBUTTONDOWN:
 			print("Click")
 			print(f"Mouse pos: {mx},{my}")
@@ -315,15 +411,22 @@ while run:
 				gameover()
 				
 			if h3.collidepoint(mx, my):
-				print("Inside the Rectangle")
+				print("Vest House")
+				print("Press q for the quiz to earn a pack \n")
+				print("Here are your previous quiz results: ")
+				vhouse()
+				
 			if h4.collidepoint(mx, my):
-				print("Inside the Rectangle")
+				print("Progression House")
+				print("Press t to update task completion")
+				phouseview()
 			if h5.collidepoint(mx, my):
-				print("Inside the Rectangle")
+				print("Dungeon")
+				dungeon()
 	
 			if h6.collidepoint(mx, my): #ai
 				print("Stock Market House")
-				
+				stockh()
 						
 		if event.type == pygame.MOUSEBUTTONUP:
 			npclines()

@@ -4,7 +4,8 @@ from google.genai import types
 
 client = genai.Client()
 
-prompt = "given savings and spending goals can you predict income for the next few months"
+prompt = input()
+print("Loading your prompt")
 
 response = client.models.generate_content(
 	model='gemini-3-flash-preview',
