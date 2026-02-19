@@ -58,8 +58,5 @@ Linux:
 $ cd taurusgem
 $ python3 taurusgemai.py
 
-
-Click to talk to npcs
-
-Click a door to activate that house
+Check the readme in the taurusgem folder for button instructions
 
