@@ -18,6 +18,8 @@ pandas
 
 pygame
 
+tkinter
+
 
 #pygame
 -familiarity with pygame is encouraged to understand the code
